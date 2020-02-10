@@ -1,0 +1,80 @@
+<html>
+    <head>
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span6">
+                    <h3>
+                        h3. 究极无敌简陋全不自动更换端口系统
+                    </h3>
+                    <br><br>
+                    <p>{{dy1}}<p><br>
+                    <textarea>{{dy}}</textarea><br>
+                    <img src={{haimianbaobao}} width="128" height="128" />
+                    <div class="alert">
+                         <button type="button" class="close" data-dismiss="alert">×</button>
+                        <h4>
+                            <strong>警告！</strong>
+                        </h4>
+                        <div>
+                            1.IP仅做学术交流使用。
+                        </div>
+                        <div>
+                            2.客户端中最好开启<font size="3" color="red">“只代理大陆不能访问的网站”</font>，不要开启全局路由。
+                        </div>
+                        <div>
+                            3.若没有特殊情况不要随意更换端口！
+                        </div>
+                         <div>
+                            4.建议设置自动订阅：<a size='3'>www.cnmf.net.cn/szUBTfY35EaZIoEA.html</a>
+                        </div>
+                    </div> 
+                    <form action="/post" method="post">
+                        {% csrf_token %}
+                        <input class="btn btn-success" type="submit" value="查看当前IP情况">
+                    </form>
+                    <form action="/post2" method="post">
+                        {% csrf_token %}
+                        <input class="btn btn-primary" type="submit" value="更换端口">
+                    </form>
+
+                </div>
+                </div>
+                <br><br>
+                <div class="span12">
+                    <dl>
+                        <dt>
+                            {{ping1}}
+                        </dt>
+                        <dd>
+                            {% if cping %}
+                                <font color="green">{{ping}}</font>
+                            {% else %}
+                                <font color="red">{{ping}}</font>
+                            {% endif %}
+                        </dd>
+                        <dt>
+                            {{tcp1}}
+                        </dt>
+                        <dd>
+                            {% if ctcp %}
+                                <font color="green">{{tcp}}</font>
+                            {% else %}
+                                <font color="red">{{tcp}}</font>
+                            {% endif %}
+                        </dd>
+                        <dt>
+                            {{port1}}
+                        </dt>
+                        <dd>
+                            {{port}}
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
